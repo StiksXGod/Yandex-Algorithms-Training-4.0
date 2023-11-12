@@ -22,10 +22,10 @@ int main(){
     long double toMid, fromMid, dugs, alfa, betta, gumma;
     long int x1,y1,x2,y2;
     cin >> x1 >> y1 >> x2 >> y2;
-    alfa = atan2(x1,y1);
-    alfa < 0 ? alfa = pi - abs(alfa) : alfa;
-    betta = atan2(x2,y2);
-    betta < 0 ? betta = pi - abs(betta): betta;
+    alfa = atan2(y1,x1);
+    //alfa < 0 ? alfa = pi - abs(alfa) : alfa;
+    betta = atan2(y2,x2);
+    //betta < 0 ? betta = pi - abs(betta): betta;
     gumma = abs(alfa - betta);
     toMid = sqrt(x1*x1+y1*y1);
     fromMid = sqrt(x2*x2+y2*y2);
@@ -36,12 +36,6 @@ int main(){
     }else{
         dugs = gumma*toMid;
         res2 = dugs + (fromMid-toMid);
-    }
-    if (onDirect(x1,x2,y1,y2) or (x1==x2 && x2==y1 && y1==y2))
-    {
-        long double res = toMid * 2;
-        cout << setprecision(12) << res << "\n";
-        return 0;
     }
     
     
