@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 int partition(long long *mass, int size, long long pivot){
@@ -6,7 +7,7 @@ int partition(long long *mass, int size, long long pivot){
     int j = size; 
     while(i<=j){
         while(mass[i]<pivot && i<=j)i++;
-        while(mass[j]>=pivot && j>=i)j--;
+        while(mass[j]>pivot && j>=i)j--;
         if (i<j)
         {
             long long temp = mass[i];
